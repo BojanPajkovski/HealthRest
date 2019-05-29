@@ -13,7 +13,10 @@ public class Doctor {
     private boolean isMatichen;
     private int hospitalId;
 
-    public Doctor(int id, String name, String surName, String jobPosition, int age, boolean isMatichen, int hospitalId) {
+    public Doctor() {
+    }
+
+    public Doctor(int id, String name,String surName, String jobPosition, int age, boolean isMatichen, int hospitalId) {
         this.id = id;
         this.name = name;
         this.surName = surName;

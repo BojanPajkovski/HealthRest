@@ -7,13 +7,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by User on 10.04.2019.
+ * Created by User on 27.05.2019.
  */
-public class CityServlet extends HttpServlet {
+public class DoctorServlet extends HttpServlet {
 
-    private static final String INSERT_OR_EDIT = "resources/city/city-details.jsp";
+    private static final String INSERT_OR_EDIT = "resources/doctor/doctor-details.jsp";
 
-    private static final String LIST_ALL_CITIES = "resources/city/cities.jsp";
+    private static final String LIST_ALL_DOCTORS = "resources/doctor/doctors.jsp";
 
     protected void doGet(HttpServletRequest request,  HttpServletResponse response) throws ServletException, IOException {
 
@@ -32,12 +32,14 @@ public class CityServlet extends HttpServlet {
             forward =  INSERT_OR_EDIT;
         } else if(request.getParameter("action").equalsIgnoreCase("list")){
 
-            forward =  LIST_ALL_CITIES;
+            forward =  LIST_ALL_DOCTORS;
         }
 
 
         request.getRequestDispatcher(forward).forward(request, response);
     }
+
+
 
 
 }

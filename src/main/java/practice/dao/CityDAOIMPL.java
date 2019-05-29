@@ -89,6 +89,29 @@ public class CityDAOIMPL {
 
     }
 
+    public List<City> searchCities(String sql){
+
+        Connection conn = ConnectionWithPattern.getConnectionWithPattern();
+        Statement stmt = null;
+        ResultSet rst = null;
+        List<City> cities = null;
+        try {
+            stmt = conn.createStatement();
+            rst = stmt.executeQuery(sql);
+            cities = new ArrayList<>();
+            while (rst.next()) {
+                int cityId = rst.getInt("id");
+                String cityName = rst.getString("name");
+                double cityPopulation = rst.getDouble("population");
+                City city = new City(cityId, cityName, cityPopulation);
+                cities.add(city);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return cities;
+    }
+
     public List<City> getAll() {
 
         Connection conn = ConnectionWithPattern.getConnectionWithPattern();

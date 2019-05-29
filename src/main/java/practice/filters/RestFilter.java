@@ -23,7 +23,7 @@ public class RestFilter implements Filter {
             //throw new ServletException("Token is missing");
 
         } else{
-            throw new ServletException("Token is missing");
+            //throw new ServletException("Token is missing");
         }
 
         filterChain.doFilter(servletRequest,servletResponse);

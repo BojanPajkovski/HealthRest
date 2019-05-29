@@ -23,7 +23,7 @@
 
 
 
-         <!-- MAPPING CITY SERVLET-->
+             <!-- MAPPING SERVLETS-->
 
 
     <servlet>
@@ -38,9 +38,21 @@
 
 
 
-     MAPPING CITY SERVLET
+    <servlet>
+        <servlet-name>doctorServlet</servlet-name>
+        <servlet-class>practice.servlet.DoctorServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>doctorServlet</servlet-name>
+        <url-pattern>/doctor</url-pattern>
+    </servlet-mapping>
 
 
+
+
+
+                   <!--MAPPING FILTER-->
 
     <filter>
         <filter-name>RestFilter</filter-name>

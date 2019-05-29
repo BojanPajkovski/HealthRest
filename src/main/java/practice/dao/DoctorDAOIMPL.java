@@ -32,12 +32,7 @@ public class DoctorDAOIMPL {
             ex.printStackTrace();
         }
 
-        finally {
 
-            try { rst.close(); } catch (Exception e)  {   e.printStackTrace(); }
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
 
     }
 
@@ -69,12 +64,7 @@ public class DoctorDAOIMPL {
             ex.printStackTrace();
         }
 
-        finally {
 
-            try { rst.close(); } catch (Exception e)  {   e.printStackTrace(); }
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
 
 
     }
@@ -105,12 +95,7 @@ public class DoctorDAOIMPL {
             e.printStackTrace();
         }
 
-        finally {
 
-            try { rst.close(); } catch (Exception e)  {   e.printStackTrace(); }
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
 
     }
 
@@ -128,7 +113,7 @@ public class DoctorDAOIMPL {
 
             stmt = conn.createStatement();
 
-            String sqlQuery = "SELECt * from doctors";
+            String sqlQuery = "SELECt * from doctor";
 
             rst = stmt.executeQuery(sqlQuery);
 
@@ -145,7 +130,7 @@ public class DoctorDAOIMPL {
                 boolean doctorIsMAtichen = rst.getBoolean("isMatichen");
                 int doctorHospitalId = rst.getInt("hospitalId");
 
-                Doctor doctor = new Doctor(doctorId, doctorName, doctorSurname,doctorJobPosition,doctorAge,doctorIsMAtichen,doctorHospitalId);
+                Doctor doctor = new Doctor(doctorId, doctorName,doctorSurname,doctorJobPosition,doctorAge,doctorIsMAtichen,doctorHospitalId);
                 doctors.add(doctor);
 
 
@@ -154,12 +139,7 @@ public class DoctorDAOIMPL {
             ex.printStackTrace();
         }
 
-        finally {
 
-            try { rst.close(); } catch (Exception e)  {   e.printStackTrace(); }
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
         return doctors;
 
     }
@@ -174,7 +154,7 @@ public class DoctorDAOIMPL {
 
             stmt = conn.createStatement();
 
-            String sqlQuery = " SELECT * FROM city WHERE id = ";
+            String sqlQuery = " SELECT * FROM doctor WHERE id = ";
             sqlQuery+=id;
 
             rst = stmt.executeQuery(sqlQuery);
@@ -189,7 +169,7 @@ public class DoctorDAOIMPL {
                 boolean doctorIsMAtichen = rst.getBoolean("isMatichen");
                 int doctorHospitalId = rst.getInt("hospitalId");
 
-                Doctor doctor = new Doctor(doctorId, doctorName, doctorSurname,doctorJobPosition,doctorAge,doctorIsMAtichen,doctorHospitalId);
+                Doctor doctor = new Doctor(doctorId,doctorName,doctorSurname,doctorJobPosition,doctorAge,doctorIsMAtichen,doctorHospitalId);
                 return doctor;
             }
 
@@ -198,12 +178,7 @@ public class DoctorDAOIMPL {
             e.printStackTrace();
         }
 
-        finally {
 
-            try { rst.close(); } catch (Exception e)  {   e.printStackTrace(); }
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
         return null;
     }
 
@@ -248,12 +223,7 @@ public class DoctorDAOIMPL {
 
         }catch(Exception e){e.printStackTrace();}
 
-        finally {
 
-            try { rst.close(); } catch (Exception e)  {   e.printStackTrace(); }
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
 
         return patientsPerDoctors;
     }
@@ -297,7 +267,7 @@ public class DoctorDAOIMPL {
                 boolean doctorIsMAtichen = rst.getBoolean("isMatichen");
                 int doctorHospitalId = rst.getInt("hospitalId");
 
-                Doctor doctor = new Doctor(doctorId, doctorName, doctorSurname,doctorJobPosition,doctorAge,doctorIsMAtichen,doctorHospitalId);
+                Doctor doctor = new Doctor(doctorId, doctorName,doctorSurname,doctorJobPosition,doctorAge,doctorIsMAtichen,doctorHospitalId);
                 doctors.add(doctor);
 
 
@@ -306,12 +276,7 @@ public class DoctorDAOIMPL {
             ex.printStackTrace();
         }
 
-        finally {
 
-            try { rst.close(); } catch (Exception e)  {   e.printStackTrace(); }
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
         return doctors;
 
 
@@ -347,7 +312,7 @@ public class DoctorDAOIMPL {
                 boolean doctorIsMAtichen = rst.getBoolean("isMatichen");
                 int doctorHospitalId = rst.getInt("hospitalId");
 
-                Doctor doctor = new Doctor(doctorId, doctorName, doctorSurname,doctorJobPosition,doctorAge,doctorIsMAtichen,doctorHospitalId);
+                Doctor doctor = new Doctor(doctorId, doctorName,doctorSurname,doctorJobPosition,doctorAge,doctorIsMAtichen,doctorHospitalId);
                 doctors.add(doctor);
             }
 
@@ -356,12 +321,7 @@ public class DoctorDAOIMPL {
             e.printStackTrace();
         }
 
-        finally {
 
-            try { rst.close(); } catch (Exception e)  {   e.printStackTrace(); }
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
         return doctors;
     }
 
