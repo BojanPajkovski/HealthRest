@@ -85,7 +85,6 @@ function saveCity(){
             type: "POST",
             data: JSON.stringify(city),
             contentType: "application/json",
-            dataType:"json",
             headers: {'token': 'token123'},
             success: function(result,status,xhr){
 

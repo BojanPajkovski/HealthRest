@@ -1,4 +1,5 @@
 var cities = [];
+var allCities = [];
 
 $(document).ready(function () {
 
@@ -153,7 +154,8 @@ function search(){
 
     if(population) {
 
-        if(hasName){
+        if(hasName
+        ){
             url+='&population='+population;
         } else {
             url+='?population=' + population;
@@ -169,12 +171,12 @@ function search(){
         headers: {'token': 'token123'},
         success: function(citiesAjax,status,xhr){
             console.log("success", citiesAjax, "status : " , status, "xhr : ", xhr.status );
-            cities = citiesAjax;
+            //cities = citiesAjax;
             $( "#table-body" ).children("tr").remove();
-            renderTable(cities);
+            renderTable(citiesAjax);
 
-            $('#deleteSuccess').hide()
-            $('#displayAllButton').hide();
+
+            $('#displayAllButton').show();
 
 
         },

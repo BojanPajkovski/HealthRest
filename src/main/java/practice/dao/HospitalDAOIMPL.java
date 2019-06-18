@@ -36,11 +36,7 @@ public class HospitalDAOIMPL {
             e.printStackTrace();
         }
 
-        finally {
 
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
 
 
     }
@@ -72,12 +68,6 @@ public class HospitalDAOIMPL {
 
         }
 
-        finally {
-
-
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
 
     }
 
@@ -104,12 +94,7 @@ public class HospitalDAOIMPL {
 
         }
 
-        finally {
 
-
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
 
     }
 
@@ -152,12 +137,7 @@ public class HospitalDAOIMPL {
 
         }
 
-        finally {
 
-            try { rst.close(); } catch (Exception e)  {   e.printStackTrace(); }
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
 
         return hospitals;
 
@@ -175,16 +155,19 @@ public class HospitalDAOIMPL {
 
             stmt = conn.createStatement();
 
-            String sqlQuery = "select name from hospital where id = ";
+            String sqlQuery = "select * from hospital where id = ";
             sqlQuery += id;
 
             rst = stmt.executeQuery(sqlQuery);
 
             while (rst.next()) {
 
+                int hospitalId = rst.getInt("id");
                 String hospitalName = rst.getString("name");
+                String hospitalLocation = rst.getString("location");
+                String hospitalType = rst.getString("type");
 
-                hospital = new Hospital(hospitalName);
+                hospital = new Hospital(hospitalId,hospitalName,hospitalLocation,hospitalType);
 
 
             }
@@ -193,12 +176,7 @@ public class HospitalDAOIMPL {
             e.printStackTrace();
         }
 
-        finally {
 
-            try { rst.close(); } catch (Exception e)  {   e.printStackTrace(); }
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
 
         return hospital;
     }
@@ -237,12 +215,7 @@ public class HospitalDAOIMPL {
             e.printStackTrace();
         }
 
-        finally {
 
-            try { rst.close(); } catch (Exception e)  {   e.printStackTrace(); }
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
 
         return hospitals;
     }
@@ -291,17 +264,12 @@ public class HospitalDAOIMPL {
             ex.printStackTrace();
         }
 
-        finally {
 
-            try { rst.close(); } catch (Exception e)  {   e.printStackTrace(); }
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
         return hospitals;
 
     }
 
-    public List<Hospital> getHospitalsByCity(int cityId) {
+    public List<Hospital>  getHospitalsByCity(int cityId) {
 
         Connection conn = ConnectionWithPattern.getConnectionWithPattern();
         Statement stmt = null;
@@ -339,15 +307,33 @@ public class HospitalDAOIMPL {
             e.printStackTrace();
         }
 
-        finally {
 
-            try { rst.close(); } catch (Exception e)  {   e.printStackTrace(); }
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
 
         return hospitals;
 
 
+    }
+
+    public List<Hospital> searchHospitals(String sql){
+
+        Connection conn = ConnectionWithPattern.getConnectionWithPattern();
+        Statement stmt = null;
+        ResultSet rst = null;
+        List<Hospital> hospitals = null;
+        try {
+            stmt = conn.createStatement();
+            rst = stmt.executeQuery(sql);
+            hospitals = new ArrayList<>();
+            while (rst.next()) {
+                int hospitalId = rst.getInt("id");
+                String hospitalName = rst.getString("name");
+                String hospitalLocation = rst.getString("location");
+                Hospital hospital = new Hospital(hospitalId, hospitalName, hospitalLocation);
+                hospitals.add(hospital);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return hospitals;
     }
 }

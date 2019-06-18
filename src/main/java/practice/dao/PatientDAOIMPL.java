@@ -31,12 +31,7 @@ public class PatientDAOIMPL {
             ex.printStackTrace();
         }
 
-        finally {
 
-            try { rst.close(); } catch (Exception e)  {   e.printStackTrace(); }
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
 
 
     }
@@ -67,12 +62,7 @@ public class PatientDAOIMPL {
             ex.printStackTrace();
         }
 
-        finally {
 
-            try { rst.close(); } catch (Exception e)  {   e.printStackTrace(); }
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
 
     }
 
@@ -99,12 +89,7 @@ public class PatientDAOIMPL {
             e.printStackTrace();
         }
 
-        finally {
 
-            try { rst.close(); } catch (Exception e)  {   e.printStackTrace(); }
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
 
     }
 
@@ -146,12 +131,7 @@ public class PatientDAOIMPL {
             ex.printStackTrace();
         }
 
-        finally {
 
-            try { rst.close(); } catch (Exception e)  {   e.printStackTrace(); }
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
         return patients;
 
     }
@@ -187,12 +167,7 @@ public class PatientDAOIMPL {
             e.printStackTrace();
         }
 
-        finally {
 
-            try { rst.close(); } catch (Exception e)  {   e.printStackTrace(); }
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
 
         return null;
     }
@@ -241,12 +216,7 @@ public class PatientDAOIMPL {
             ex.printStackTrace();
         }
 
-        finally {
 
-            try { rst.close(); } catch (Exception e)  {   e.printStackTrace(); }
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
         return patients;
 
     }
@@ -286,15 +256,34 @@ public class PatientDAOIMPL {
             e.printStackTrace();
         }
 
-        finally {
-
-            try { rst.close(); } catch (Exception e)  {   e.printStackTrace(); }
-            try { stmt.close(); } catch (Exception e) {  e.printStackTrace(); }
-            try { conn.close(); } catch (Exception e) {  e.printStackTrace();}
-        }
 
 
         return patient;
+    }
+
+    public List<Patient> searchPatients(String sql){
+
+        Connection conn = ConnectionWithPattern.getConnectionWithPattern();
+        Statement stmt = null;
+        ResultSet rst = null;
+        List<Patient> patients = null;
+        try {
+            stmt = conn.createStatement();
+            rst = stmt.executeQuery(sql);
+            patients = new ArrayList<>();
+            while (rst.next()) {
+                int patientId = rst.getInt("id");
+                String patientName = rst.getString("name");
+                String patientSurname = rst.getString("surname");
+                int patientAge = rst.getInt("age");
+
+                Patient patient = new Patient(patientId, patientName, patientSurname,patientAge);
+                patients.add(patient);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return patients;
     }
 
 

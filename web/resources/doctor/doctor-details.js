@@ -60,7 +60,7 @@ function doctorValidation(){
 
 function saveDoctor(){
 
-    console.log('Hello, I am from save doctor');
+    console.log('Hello, You have reached to save doctor');
 
     var doctor = {};
 

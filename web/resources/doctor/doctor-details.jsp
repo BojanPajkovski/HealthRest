@@ -67,7 +67,7 @@
 
   <h2> YOU HAVE SUCCESSFULLY INSERTED A DOCTOR</h2>
 
-  <button class="btn btn-success" onclick='window.location ="/city?action=list"' >GO TO DOCTORS</button>
+  <button class="btn btn-success" onclick='window.location ="/doctor?action=list"' >GO TO DOCTORS</button>
 
 </div>
 

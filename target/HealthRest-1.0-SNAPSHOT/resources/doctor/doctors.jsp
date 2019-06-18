@@ -22,8 +22,48 @@
 
 </div>
 
+       <%--TABELA ZA DTO--%>
+
+<div id="dtoContainer" class="container">
+
+  <h2>Patients by Doctor Table</h2>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>doctorName</th>
+      <th>patientName</th>
+      <th>dijagnoza</th>
+      <th>age</th>
+    </tr>
+    </thead>
+    <tbody id="dtoTable-body">
+
+    </tbody>
+  </table>
+
+  <button  id= "displayAllButton1" class="btn btn-primary btn-sm" onclick="displayAllDoctors()">All Doctors</button>
+
+  </div>
+
 <div id="container" class="container">
+
+  <br/>
+  <span>Search Doctor</span>
+  <div class="row" id = "searchContainer">
+    <div class="col-md-3">
+      <input type="text" id="doctorName" placeholder="Doctor name">
+      <span>insert doctor name</span>
+    </div>
+    <div class="col-md-3">
+      <input type="text" id="doctorSurname" placeholder="Doctor surname">
+      <span>insert doctor surname</span>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-sm btn-primary" onclick="search()">Search</button>
+    </div>
+  </div>
   <h2>Doctors Table</h2>
+
   <table class="table">
     <thead>
     <tr>
@@ -38,22 +78,34 @@
     </tbody>
   </table>
 
+
+
+  <div class="form-group">
+    <button class="btn btn-primary btn-sm" onclick="addDoctor()">Add Doctor</button>
+  </div>
+
+
+  <div class="form-group">
+    <input id="searchText" type="text" onkeyup="filterValidation()">
+    <span id = "filterValidation" class="text-warning"> *You must enter text to do filter</span>
+    <button class="btn btn-primary btn-sm" onclick="filterByDoctorsName()">Filter Doctors</button>
+  </div>
+
+  <div class = "form-group">
+
+    <select id ="hospitalDropdown" >
+
+    </select>
+
+    <button class="btn btn-primary btn-sm" id = "filterByHospital"  onclick="filterByHospital()"> Filter by Hospital</button>
+
+  </div>
+
+
+  <button  id= "displayAllButton" class="btn btn-primary btn-sm" onclick="displayAllDoctors()">All Doctors</button>
+
 </div>
 
-<div class="form-group">
-  <button class="btn btn-primary btn-sm" onclick="addDoctor()">Add Doctor</button>
-</div>
-
-<div class="form-group">
-  <input id="searchText" type="text" onkeyup="filterValidation()">
-  <span id = "filterValidation" class="text-warning"> *You must enter text to do filter</span>
-  <button class="btn btn-primary btn-sm" onclick="filterByDoctorsName()">Filter Doctors</button>
-</div>
-
-
-<button  id= "displayAllButton" class="btn btn-primary btn-sm" onclick="displayAllDoctors()">All Doctors</button>
-
-</div>
 
 <div id = "deleteSuccess">
 

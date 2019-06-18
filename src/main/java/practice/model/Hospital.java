@@ -11,6 +11,25 @@ public class Hospital {
     private String type;
     private int cityId;
 
+    public Hospital(){
+
+    }
+
+    public Hospital(int id, String name, String location) {
+        this.id = id;
+        this.name = name;
+        this.location = location;
+
+    }
+
+    public Hospital(int id, String name, String location, String type) {
+        this.id = id;
+        this.name = name;
+        this.location = location;
+        this.type = type;
+
+    }
+
     public Hospital(int id, String name, String location, String type, int cityId) {
         this.id = id;
         this.name = name;

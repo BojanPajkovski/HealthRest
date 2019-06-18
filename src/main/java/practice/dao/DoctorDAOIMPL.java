@@ -325,4 +325,27 @@ public class DoctorDAOIMPL {
         return doctors;
     }
 
+    public List<Doctor> searchDoctors (String sql){
+
+        Connection conn = ConnectionWithPattern.getConnectionWithPattern();
+        Statement stmt = null;
+        ResultSet rst = null;
+        List<Doctor> doctors = null;
+        try {
+            stmt = conn.createStatement();
+            rst = stmt.executeQuery(sql);
+            doctors = new ArrayList<>();
+            while (rst.next()) {
+                int doctorId = rst.getInt("id");
+                String doctorName = rst.getString("name");
+                String doctorSurname = rst.getString("surname");
+                Doctor city = new Doctor(doctorId, doctorName, doctorSurname);
+                doctors.add(city);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return doctors;
+    }
+
 }

@@ -16,6 +16,12 @@ public class Doctor {
     public Doctor() {
     }
 
+    public Doctor(int id, String name, String surName) {
+        this.id = id;
+        this.name = name;
+        this.surName = surName;
+    }
+
     public Doctor(int id, String name,String surName, String jobPosition, int age, boolean isMatichen, int hospitalId) {
         this.id = id;
         this.name = name;

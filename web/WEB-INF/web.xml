@@ -26,6 +26,8 @@
              <!-- MAPPING SERVLETS-->
 
 
+
+                   <!-- CITY-->
     <servlet>
         <servlet-name>cityServlet</servlet-name>
         <servlet-class>practice.servlet.CityServlet</servlet-class>
@@ -36,7 +38,7 @@
         <url-pattern>/city</url-pattern>
     </servlet-mapping>
 
-
+                        <!--DOCTOR-->
 
     <servlet>
         <servlet-name>doctorServlet</servlet-name>
@@ -48,11 +50,35 @@
         <url-pattern>/doctor</url-pattern>
     </servlet-mapping>
 
+                      <!--PATIENT-->
+
+    <servlet>
+        <servlet-name>patientServlet</servlet-name>
+        <servlet-class>practice.servlet.PatientServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>patientServlet</servlet-name>
+        <url-pattern>/patient</url-pattern>
+    </servlet-mapping>
+
+                    <!--HOSPITAL-->
+
+    <servlet>
+        <servlet-name>hospitalServlet</servlet-name>
+        <servlet-class>practice.servlet.HospitalServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>hospitalServlet</servlet-name>
+        <url-pattern>/hospital</url-pattern>
+    </servlet-mapping>
 
 
 
 
-                   <!--MAPPING FILTER-->
+
+                 <!--MAPPING FILTER-->
 
     <filter>
         <filter-name>RestFilter</filter-name>
