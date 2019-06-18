@@ -30,16 +30,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CityController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/practice/restcontroller/CityController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1040" max-vertical-offset="1972">
-              <caret line="98" column="24" selection-start-line="98" selection-start-column="4" selection-end-line="116" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="hospitals.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/resources/hospital/hospitals.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -90,11 +80,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConnectionWithPattern.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ConnectionWithPattern.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/practice/dbconnection/ConnectionWithPattern.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5981839" vertical-offset="0" max-vertical-offset="881">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
               <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nino.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/resources/city/nino.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.31812865" vertical-offset="0" max-vertical-offset="855">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -194,6 +194,7 @@
         <option value="$PROJECT_DIR$/web/resources/doctor/doctors.jsp" />
         <option value="$PROJECT_DIR$/web/resources/doctor/doctors.js" />
         <option value="$PROJECT_DIR$/src/main/java/practice/dbconnection/ConnectionWithPattern.java" />
+        <option value="$PROJECT_DIR$/web/resources/city/nino.jsp" />
       </list>
     </option>
   </component>
@@ -882,12 +883,12 @@
       <workItem from="1560799405930" duration="59000" />
       <workItem from="1560800925215" duration="361000" />
       <workItem from="1560801971161" duration="1900000" />
-      <workItem from="1560876071716" duration="52000" />
+      <workItem from="1560876071716" duration="298000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123672000" />
+    <option name="totallyTimeSpent" value="123918000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -910,7 +911,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1040" extended-state="1" />
+    <frame x="0" y="0" width="1920" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -992,13 +993,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/practice/dao/DoctorDAOIMPL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5461" max-vertical-offset="6358">
-          <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/sql/Connection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="828" max-vertical-offset="24956">
@@ -1363,8 +1357,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/practice/dbconnection/ConnectionWithPattern.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5981839" vertical-offset="0" max-vertical-offset="881">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/city/nino.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31812865" vertical-offset="0" max-vertical-offset="855">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
